@@ -1,23 +1,38 @@
-var express = require('express');
-var boddyParser = require('body-parser');
-var exhbs = require('express-handlebars');
-//var sequelize = require('sequelize');
+// Dependencies 
+var express = require("express");
+var bodyParser = require("body-parser");
+var passport = require('passport');
 
-//set up express app
-var app = expres();
+// express app
+var app = express();
 var PORT = process.env.PORT || 8080;
 
-//require models for syncing
-var db = require('/path/to/models');
+// require models
+var db = require("./models");
 
-//handleing parsing
-app.use(boddyParser.urlencoded({ extended: true }));
-app.use(boddyParser.json());
-app.use(express.statis('public'));
+// Set Handlebars
+var exphbs = require("express-handlebars");
 
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-//need to sync sequelize models and run the express app
+// Static directory
+app.use(express.static(__dirname + '/public'));
 
-app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
-})
+// handling data parsing
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static("public"));
+
+// routes
+require("./routes/discussion-api-routes.js")(app);
+require("./routes/post-api-routes.js")(app);
+require("./routes/user-api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+
+// sync sequelize models & start express app
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function () {
+        console.log(`App listenting on PORT: ${PORT}`);
+    });
+});
