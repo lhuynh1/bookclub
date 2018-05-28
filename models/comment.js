@@ -4,8 +4,14 @@ module.exports = (sequelize, DataTypes) => {
     body: DataTypes.TEXT,
     createdAt: DataTypes.TIMESTAMP
   }, {});
+  
   Comment.associate = function(models) {
     // associations can be defined here
+    Comment.belongsTo(models.Discussion, {
+      foreignKey: "commentID",
+      onDelete: "CASCADE",
+    });
   };
+  
   return Comment;
 };
