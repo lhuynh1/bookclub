@@ -7,16 +7,24 @@ module.exports = (sequelize, DataTypes) => {
     },
     userName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      unique: true,
+      validate: {
+        notNull: true,
+        notEmpty: true,
+      }
     },
+    password: {
+      type: DataTypes.STRING,
+      validate: {
+        notNull: true,
+        notEmpty: true,
+      }
+    }
   });
 
   User.associate = function(models) {
     // associations can be defined here
-    User.hasMany(models.comments, {
-      foreignKey: "commentId",
-      onDelete: "CASCADE"
-    });
+   
   };
   return User;
 };
