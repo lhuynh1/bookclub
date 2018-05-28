@@ -7,10 +7,13 @@ var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
+//require routes
+require("./routes/comment-api-routes.js")(app);
+
+
+//sync sequelize modes and start express app
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
-
-var routes = require("./controllers/comments.js");
-
-app.use(routes);
