@@ -1,16 +1,9 @@
-var comment = require("../models/comment");
-var express = require("express");
-var router = express.Router();
+// var db = require("../models")
 
-//set up route to handlebars
-router.get("/", function(req, res) {
-  comment.findAll(function(data) {
-    var hbsObj = {
-      comments: data
-    };
-    console.log(hbsObj);
-    res.render("discussions", hbsObj);
-  })
-})
+// module.exports = function(app) {
 
-module.exports = router;
+//   // GET route for getting all of the posts
+//   app.get("/", function(req, res) {
+//     //get json data for all comments and the users who wrote comment
+//   });
+// }
