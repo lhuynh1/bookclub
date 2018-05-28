@@ -10,3 +10,7 @@ app.use(bodyParser.json());
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
+
+var routes = require("./controllers/comments.js");
+
+app.use(routes);
