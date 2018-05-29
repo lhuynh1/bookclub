@@ -1,9 +1,11 @@
-// var db = require("../models")
+var Comment = require("../models").Comment;
 
-// module.exports = function(app) {
-
-//   // GET route for getting all of the posts
-//   app.get("/", function(req, res) {
-//     //get json data for all comments and the users who wrote comment
-//   });
-// }
+module.exports = {
+  create(req, res) {
+    return Comment  .create({
+      title: req.body.title,
+      content: req.body.content
+    }).then(comment => res.status(201).send(comment))
+      .catch(comment => res.status(400).send(error));
+  }
+}
