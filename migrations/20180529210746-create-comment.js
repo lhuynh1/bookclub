@@ -9,12 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.STRING
       },
-      body: {
-        type: Sequelize.TEXT,
-        allowNull: false,
+      content: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -23,19 +21,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      commentId: {
-        type: Sequelize.INTEGER,
-        onDelete: "CASCADE",
-        references: {
-          model: "comment",
-          key: "id",
-          as: "commentId",
-        }
       }
     });
   },
-  down: (queryInterface/*, Sequelize*/) => {
+  down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('comments');
   }
 };
