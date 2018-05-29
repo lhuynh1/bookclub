@@ -8,6 +8,14 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Profile.associate = function(models) {
     // associations can be defined here
+    Profile.hasOne(models.Users, {
+        foreignKey: "UserID",
+        as: "user"
+    })
+    Profile.belongsTo(models.User,{
+        foreignKey: "userID",
+        onDelete: "CASCADE"
+    })
   };
   return Profile;
 };
