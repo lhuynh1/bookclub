@@ -1,23 +1,19 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Discussion = sequelize.define('Discussion', {
+  var discussion = sequelize.define('discussion', {
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
+    content: DataTypes.STRING
     }, 
   });
-
-  Discussion.associate = function(models) {
+  
+  discussion.associate = function(models) {
     // associations can be defined here
-    // Discussion.hasMany(models.Comments, {
-    //   foreignKey: "commentsId",
-    //   as: "comments"
-    // })
-
-    // Discussion.belongsTo(models.User, {
-    //   foreignKey: "userId",
-    //   onDelete: "CASCADE",
-    // });
+    discussion.hasMany(models.comment, {
+      foreignKey: "commentId",
+      as: "comment",
+    })
   };
-  return Discussion;
+  return discussion;
 };
