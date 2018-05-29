@@ -15,6 +15,9 @@ app.use(express.static(__dirname + "/public"));
 
 //require routes
 require("./routes")(app);
+app.get("*", (req, res) => res.status(200).send({
+  message: "Welcome to Nowhere..."
+}))
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
