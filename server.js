@@ -13,8 +13,9 @@ app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public"));
 
-//require routes
+//require defined routes
 require("./routes")(app);
+//catch-all route for anything not listed
 app.get("*", (req, res) => res.status(200).send({
   message: "Welcome to Nowhere..."
 }))

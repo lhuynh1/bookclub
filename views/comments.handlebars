@@ -1,7 +1,29 @@
+
+
+<div class="commentBody"></div>
+
 {{#each hbsComments}}
-  <div class="commentTitle">{{title}}
-    <div class="commentContent">
-      {{content}}
+  <div class="header">
+    <div class="commentTitle">{{title}}
+    </div>
+    
+    <div class="timeStamp">
+      {{createdAt}}
     </div>
   </div>
+  
+  <div class="commentBody">
+    {{body}}
+  </div>
+
+  <div class="updateDelete">
+    <button type="button" class="updateBtn">
+      Edit
+    </button>
+    <button type="button" class= "deleteBtn">
+      Delete
+    </button>
+  </div>  
 {{/each}}
+
+</div>
