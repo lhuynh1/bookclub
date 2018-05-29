@@ -15,6 +15,7 @@ app.use(express.static(__dirname + "/public"));
 
 //require defined routes
 require("./routes")(app);
+
 //catch-all route for anything not listed
 app.get("*", (req, res) => res.status(200).send({
   message: "Welcome to Nowhere..."
