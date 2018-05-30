@@ -3,6 +3,8 @@ var commentsController = require("../controllers").comments;
 var Comment = require("../models").Comment;
 
 module.exports = function(app) {
+  //==================//
+  //routes relating to comments model//
   app.get("/", (req, res) => res.status(200).send({message: "route works"}));
 
   //this grabs all comments from the db and renders them in the handlebars page that displays comments
@@ -14,5 +16,5 @@ module.exports = function(app) {
 
   app.post("/comments", commentsController.create);
 
-  //app.post("/comments/:commentsId", commentsController.update);
+  app.post("/comments/:commentsId", commentsController.update);
 };
