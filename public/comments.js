@@ -8,9 +8,8 @@ $(document).ready(function() {
       type: 'DELETE',
       success: function(result) {
         alert("deleted");
+        window.location.reload();
       }
     });
   });
-
-  
 });
