@@ -1,0 +1,17 @@
+.commentBody {
+  background: #ff8383;
+};
+
+.commentTitle {
+  font-size: 20px;
+}
+
+.timeStamp {
+  display: inline;
+};
+
+.commentContent {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Franklin Gothic Medium';
+}
