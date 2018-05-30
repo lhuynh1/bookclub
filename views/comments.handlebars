@@ -1,3 +1,4 @@
+<script src="/comments.js"></script>
 <div class="commentBody"></div>
 
 {{#each hbsComments}}
@@ -18,7 +19,7 @@
     <button type="button" class="updateBtn">
       Edit
     </button>
-    <button type="button" class= "deleteBtn">
+    <button type="button" class= "deleteBtn" data-comment-id="{{id}}">
       Delete
     </button>
   </div>  

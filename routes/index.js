@@ -14,7 +14,19 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/comments", commentsController.create);
+  app.get("/comments/create", function(req, res) {
+    res.render("createComment");
+  });
 
-  app.post("/comments/:commentsId", commentsController.update);
+  app.get("/comments/:commentId", function(req, res) {
+    Comment.findById(req.params.commentId).then(function(dbcomment) {
+      res.render("updateComment", dbcomment.get());
+    })
+  })
+  app.post("/comments", commentsController.create);
+  app.post("/comments/create", commentsController.create);
+
+  app.post("/comments/:commentId", commentsController.update);
+
+  app.delete("/comments/:commentId", commentsController.delete);
 };
