@@ -7,7 +7,7 @@ $(document).ready(function() {
       url: url,
       type: 'DELETE',
       success: function(result) {
-        alert("deleted");
+        alert("Comment deleted!");
         window.location.reload();
       }
     });
