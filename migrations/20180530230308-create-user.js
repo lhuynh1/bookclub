@@ -8,8 +8,8 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userName: {
-        type: Sequelize.STRING
+      username: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

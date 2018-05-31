@@ -5,8 +5,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       primaryKey: true,
     },
-    userName: {
+    email: {
       type: DataTypes.STRING,
+      validate: {
+        isEmail: true
+      }
+    },
+    userName: {
+      type: DataTypes.TEXT,
       unique: true,
       validate: {
         notNull: true,
@@ -19,6 +25,13 @@ module.exports = (sequelize, DataTypes) => {
         notNull: true,
         notEmpty: true,
       }
+    },
+    last_login: {
+      type: DataTypes.DATE
+    },
+    status: {
+      type: DataTypes.ENUM('active', 'inactive'),
+      defaultValue: 'active'
     }
   });
 
