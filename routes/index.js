@@ -3,8 +3,9 @@ var commentsController = require("../controllers").comments;
 var Comment = require("../models").Comment;
 
 module.exports = function(app) {
-  //==================//
-  //routes relating to comments model
+  //===============================================================//
+  //================All routes relating to comments================//
+  //===============================================================//
   app.get("/", (req, res) => res.status(200).send({message: "route works"}));
 
   //this grabs all comments from the db and renders them in the handlebars page 
@@ -25,4 +26,7 @@ module.exports = function(app) {
 
   app.post("/comments/:commentId", commentsController.update);
   app.delete("/comments/:commentId", commentsController.delete);
+  //================================================================//
+  //=============need to put all of these in their own file=========//
+  //================================================================//
 };
