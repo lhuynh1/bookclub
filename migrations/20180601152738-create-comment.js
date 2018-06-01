@@ -1,15 +1,20 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Discussions', {
+    return queryInterface.createTable('Comments', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
-      topic: {
-        type: Sequelize.STRING
+      title: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      content: {
+        type: Sequelize.TEXT,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -21,7 +26,7 @@ module.exports = {
       }
     });
   },
-  down: (queryInterface/*, Sequelize*/) => {
-    return queryInterface.dropTable('Discussions');
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('Comments');
   }
 };

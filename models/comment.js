@@ -1,21 +1,24 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Comment = sequelize.define('Comment', {
+  const Comment = sequelize.define('Comment', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    },  
     content: {
       type: DataTypes.TEXT,
       allowNull: false,
-    },
+    }, 
   });
   Comment.associate = function(models) {
     // associations can be defined here
-    Comment.belongsTo(models.Discussion, {
-      foreignKey: 'discussionId',
-      onDelete: 'CASCADE',
-    });
+    Comment.belongsTo(models.Discussion);
   };
   return Comment;
 };
