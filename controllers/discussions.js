@@ -11,10 +11,15 @@ module.exports = {
   },
 
   listAll(req, res) {
-    return Discussion.all().then(discussion => res.status(200).send(discussion))
-    .catch(error => res.status(400).send(error));
+    return Discussion.all().then(function(dbDiscussions) {
+      res.render("discussions", { hbsDiscussions: dbDiscussions })
+    });
+      
+    //   discussion => res.status(200).send(discussion))
+    // .catch(error => res.status(400).send(error));
   },
 
+  //displays all comments under specific discussion id 
   commentsForDiscussion(req, res) {
     return Discussion.findById(req.params.discussionId)
       .then(function(discussion) {
