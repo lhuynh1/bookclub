@@ -1,17 +1,20 @@
-.commentBody {
-  background: #ff8383;
-};
-
-.commentTitle {
-  font-size: 20px;
+body {
+  max-width: 75%;
+  margin: 0 auto;
 }
 
+.pageBody {
+  background: #f8f4dc;
+
+};
+
 .timeStamp {
-  display: inline;
+  text-align: right;
 };
 
 .commentContent {
   padding-top: 10px;
   padding-bottom: 10px;
   font-family: 'Franklin Gothic Medium';
-}
+  font-size: 20px;
+};

@@ -30,7 +30,7 @@ module.exports = function(app) {
   //=============need to put all of these in their own file=========//
   //================================================================//
 
-  app.post('/discussions', discussionsController.create);
+  app.post("/discussions", discussionsController.create);
   app.get("/discussions", discussionsController.listAll);
   app.get("/discussions/:discussionId/comments", discussionsController.commentsForDiscussion);
   app.post("/discussions/:discussionId/comments", commentsController.create);
