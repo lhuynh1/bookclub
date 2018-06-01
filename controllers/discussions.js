@@ -9,4 +9,9 @@ module.exports = {
       .then(discussion => res.status(201).send(discussion))
       .catch(error => res.status(400).send(error));
   },
+
+  lsitAll(req, res) {
+    return Discussion.all().then(discussion => res.status(200).send(discussion))
+    .catch(error => res.status(400).send(error));
+  }
 };

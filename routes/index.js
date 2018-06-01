@@ -22,7 +22,7 @@ module.exports = function(app) {
   // app.get("/comments/:commentId", commentsController.displayOne);
 
   // //these routes handle comment create, update, delete functionality
-  // app.post("/comments", commentsController.create);
+  app.post("/comments", commentsController.create);
    app.post("/comments/create", commentsController.create);
 
   // app.post("/comments/:commentId", commentsController.update);
@@ -32,4 +32,6 @@ module.exports = function(app) {
   //================================================================//
 
   app.post('/discussions', discussionsController.create);
+  app.get("/discussions", discussionsController.lsitAll);
+  app.post("/discussions/:discussionId/comments", commentsController.create);
 };
