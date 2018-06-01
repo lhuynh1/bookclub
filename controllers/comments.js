@@ -31,7 +31,7 @@ module.exports = {
         comment.save().then(function() {
           console.log("updated comment");
         });
-        res.redirect('/comments');
+        res.redirect('/discussions/' + comment.DiscussionId + '/comments');
       })
       .catch(error => res.status(400).send(error));
   },
