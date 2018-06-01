@@ -6,7 +6,7 @@ module.exports = {
       .create({
         topic: req.body.topic,
       })
-      .then(todo => res.status(201).send(discussion))
+      .then(discussion => res.status(201).send(discussion))
       .catch(error => res.status(400).send(error));
   },
 };
