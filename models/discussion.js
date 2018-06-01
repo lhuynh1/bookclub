@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Discussion.associate = function(models) {
     // associations can be defined here
-    //Discussion.hasMany(models.Comment);
+    Discussion.hasMany(models.Comment, {as: "Comments"});
   };
   return Discussion;
 };

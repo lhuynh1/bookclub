@@ -10,8 +10,18 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
-  lsitAll(req, res) {
+  listAll(req, res) {
     return Discussion.all().then(discussion => res.status(200).send(discussion))
     .catch(error => res.status(400).send(error));
+  },
+
+  commentsForDiscussion(req, res) {
+    return Discussion.findById(req.params.discussionId)
+      .then(function(discussion) {
+        discussion.getComments()
+          .then(function(dbcomments) {
+            res.render('comments', { hbsComments: dbcomments });
+          })
+      })
   }
 };

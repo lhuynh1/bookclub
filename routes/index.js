@@ -32,6 +32,7 @@ module.exports = function(app) {
   //================================================================//
 
   app.post('/discussions', discussionsController.create);
-  app.get("/discussions", discussionsController.lsitAll);
+  app.get("/discussions", discussionsController.listAll);
+  app.get("/discussions/:discussionId/comments", discussionsController.commentsForDiscussion);
   app.post("/discussions/:discussionId/comments", commentsController.create);
 };
