@@ -6,12 +6,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     }, 
   });
-  
   Discussion.associate = function(models) {
     // associations can be defined here
     Discussion.hasMany(models.Comment, {
-      foreignKey: 'commentId',
-      as: 'comments',
+      foreignKey: 'discussionId',
+      as: "comments"
     });
   };
   return Discussion;

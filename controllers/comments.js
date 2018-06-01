@@ -2,9 +2,12 @@ var Comment = require("../models").Comment;
 
 module.exports = {
   listAll(req, res) {
-    Comment.all().then(function(dbComments) {
-      res.render("comments", { hbsComments: dbComments })
-    });
+    return Comment.all().then(comments => res.status(200).send(comments))
+    .catch(error => res.status(400).send(error));
+    
+    //.then(function(dbComments) {
+      //res.render("comments", { hbsComments: dbComments })
+    //});
   },
 
   displayOne(req, res) {

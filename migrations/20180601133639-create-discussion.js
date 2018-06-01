@@ -9,8 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       topic: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -22,7 +21,7 @@ module.exports = {
       }
     });
   },
-  down: (queryInterface, Sequelize) => {
+  down: (queryInterface/*, Sequelize*/) => {
     return queryInterface.dropTable('Discussions');
   }
 };

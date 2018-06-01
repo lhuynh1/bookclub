@@ -8,9 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     content: {
       type: DataTypes.TEXT,
       allowNull: false,
-    }
+    },
   });
-
   Comment.associate = function(models) {
     // associations can be defined here
     Comment.belongsTo(models.Discussion, {
