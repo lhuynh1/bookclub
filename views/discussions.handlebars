@@ -4,10 +4,13 @@
       <a href="#">Start a new Discussion</a>
     </button>
 </div>
+<div class="divider"></div>
 
 {{#each hbsDiscussions}}
-<div class="topic">{{topic}}</div>
-<br>
-<button type="button" class="addCommentBtn">Add a Comment</button>
+<div class="topicGroup">
+  <div class="topic">{{topic}}</div>
 
+  <button type="button" class="addCommentBtn">Go To Comment</button>
+</div>
+<div class="divider"></div>
 {{/each}}
