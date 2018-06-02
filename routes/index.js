@@ -17,13 +17,12 @@ module.exports = function(app) {
      res.render("createComment");
    });
 
-  //search for a specific post by id
+  //page to display one comment by id
   app.get("/comments/:commentId", commentsController.displayOne);
 
   // //these routes handle comment create, update, delete functionality
   app.post("/comments", commentsController.create);
   app.post("/comments/create", commentsController.create);
-
   app.post("/comments/:commentId", commentsController.update);
   app.delete("/comments/:commentId", commentsController.delete);
   //================================================================//
