@@ -58,3 +58,28 @@ module.exports = app;
          });
      });
  };
+
+
+ 
+//var profilesController = require("./controllers/profileController");
+//  app.get("/", function(req, res) {
+//     res.send("hello world");
+  
+//   app.get("/api",(req, res)=> res.status(200).send({
+//     message: "Testing api"
+//   }));
+//   app.post('/api/profile', profileController.create);
+//   });
+  
+//   const User= require('./models/profile');
+
+// module.exports= (app) => {
+//     app.get('/api', (req, res) => res.status(200).send({
+//         message: "Testing Profiles API",
+//     }));
+//     app.post('/api/user/:userId/profile', profileController.create);
+//     app.get('/api/user/userId', profileController.recieve)
+//     app.delete('/api/user/:userId', profileController.destroy);
+// };
+
+// module.exports = app;
