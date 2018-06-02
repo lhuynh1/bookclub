@@ -25,12 +25,8 @@
     
     <div class="section">
       <p class="commentContent">{{content}}</p>
-      <button type="button" class="updateBtn">
-        <a href="/comments/{{id}}">Edit</a>
-      </button>
-      <button type="button" class= "deleteBtn" data-comment-id="{{id}}">
-        Delete
-      </button>
+      <a href="/comments/{{id}}" class="waves-effect waves-light btn-small">Edit</a>
+      <button class="deleteBtn waves-effect waves-light btn-small" data-comment-id="{{id}}">Delete</button>
     </div>
     
     <div class="timeStamp">
@@ -39,3 +35,4 @@
   </div>
   {{/each}}
 </div>
+
