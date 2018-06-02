@@ -1,5 +1,3 @@
-import { userInfo } from "os";
-
 var bCrypt = require("bcrypt-nodejs");
 
 module.exports = function(passport, user) {
@@ -92,7 +90,7 @@ passport.use('local-signin', new LocalStrategy (
             }
 
             var userinfo = user.get();
-            return done (null, userInfo);
+            return done (null, userinfo);
 
         }).catch(function (err) {
             console.log("Error occured: ", err);
