@@ -1,9 +1,9 @@
 var comments = require("./comments");
 var discussions = require("./discussions");
-var profiles = require("./profileController");
+var users = require("./users");
 
 module.exports = {
   comments,
   discussions,
-  profiles,
+  users,
 };

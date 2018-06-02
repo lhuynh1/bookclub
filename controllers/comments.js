@@ -16,6 +16,7 @@ module.exports = {
         title: req.body.title,
         content: req.body.content,
         DiscussionId: req.params.discussionId,
+        ProfileId: req.body.ProfileId,
       })
       .then(comment => res.send(comment))
         //redirect('/comments'))

@@ -14,7 +14,9 @@ app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public"));
 
-var routes = require('./routes')(app);
+require("./routes")(app);
+//require("./routes/user-api-routes/")(app);
+//app.use("/", routes);
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);

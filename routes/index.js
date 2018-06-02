@@ -1,7 +1,7 @@
 var commentsDiscussionsRoutes = require("./commentsDiscussionsRoutes");
-var userRoutes = require("./user-api-routes");
+var userRoutes = require("./userRoutes");
 
-module.exports = app => {
-  commentsDiscussionsRoutes,
-  userRoutes,
+module.exports = function(app) {
+  commentsDiscussionsRoutes(app);
+  userRoutes(app);
 };

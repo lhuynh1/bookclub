@@ -17,24 +17,23 @@ module.exports = {
     )
 
     .then(() => {
-      // Discussion hasMany Product
+      //Comments BelongTo User
       return queryInterface.addColumn(
-        'Discussions', // name of Target model
-        'CommentsId', // name of the key we're adding
+        "Comments", //name of source model
+        "UserId", //name of key we are adding
         {
           type: Sequelize.INTEGER,
           references: {
-            model: 'Comments', // name of Source model
-            key: 'id',
+            model: "Users", //target model name
+            key: "id", //key that we are referencing is the discussion's id
           },
-          onUpdate: 'CASCADE',
-          onDelete: 'SET NULL',
+          onUpdate: "CASCADE",
+          OnDelete: "SET NULL",
         }
-      );
-    });
+      )
+    }) 
   },
   
-
   down: (queryInterface, Sequelize) => {
     return queryInterface.removeColumn(
       "Comments",
