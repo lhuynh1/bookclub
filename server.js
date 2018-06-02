@@ -16,15 +16,6 @@ app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public"));
 
-<<<<<<< HEAD
-//require defined routes
-require("./routes")(app);
-
-//catch-all route for anything not listed
-app.get("*", (req, res) => res.status(200).send({
-  message: "Welcome to Nowhere..."
-}))
-=======
 app.get("/", function(req, res) {
   res.send("hello world");
 
@@ -33,7 +24,6 @@ app.get("/api",(req, res)=> res.status(200).send({
 }));
 app.post('/api/profile', profileController.create);
 });
->>>>>>> mack
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
