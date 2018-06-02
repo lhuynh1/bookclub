@@ -3,12 +3,14 @@ module.exports = (sequelize, DataTypes) => {
   var User = sequelize.define('User', {
     id: {
       type: DataTypes.UUID,
-      primaryKey: true,
+      primaryKey: true
     },
     email: {
       type: DataTypes.STRING,
       validate: {
-        isEmail: true
+        isEmail: true,
+        notNull: true,
+        notEmpty: true
       }
     },
     userName: {
@@ -16,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       validate: {
         notNull: true,
-        notEmpty: true,
+        notEmpty: true
       }
     },
     password: {
@@ -25,6 +27,23 @@ module.exports = (sequelize, DataTypes) => {
         notNull: true,
         notEmpty: true,
       }
+    },
+    firstName: {
+      type: DataTypes.STRING,
+      notEmpty: true
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      notEmpty: true
+    },
+    favBook: {
+      type: DataTypes.STRING
+    },
+    favAuthor: {
+      type: DataTypes.STRING
+    },
+    bio: {
+      type: DataTypes.TEXT
     },
     last_login: {
       type: DataTypes.DATE
