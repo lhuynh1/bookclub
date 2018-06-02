@@ -1,0 +1,16 @@
+<div class="header">Discussions by Book
+  <p class="rules">Start a new discussion by creating a topic</p>
+  <button type="button" class="createTopic">
+      <a href="#">Start a new Discussion</a>
+    </button>
+</div>
+<div class="divider"></div>
+
+{{#each hbsDiscussions}}
+<div class="topicGroup">
+  <div class="topic">{{topic}}</div>
+
+  <button type="button" class="addCommentBtn">Go To Comment</button>
+</div>
+<div class="divider"></div>
+{{/each}}
