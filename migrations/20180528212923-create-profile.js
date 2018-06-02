@@ -14,6 +14,9 @@ module.exports = {
       lastName: {
         type: Sequelize.STRING
       },
+      userBio: {
+        type: Sequelize.TEXT
+      },
       faveBook: {
         type: Sequelize.STRING
       },
