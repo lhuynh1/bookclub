@@ -39,6 +39,7 @@ module.exports = {
         title: req.body.title,
         content: req.body.content
       });
+      console.log(req.user)
       comment.setDiscussion(discussion);
       comment.save()
       .then(function(comment) {

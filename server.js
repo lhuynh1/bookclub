@@ -12,6 +12,8 @@ var passportjs = require('./config/passport');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static("public"));
+
 // passport setup
 app.use(session({ secret: 'qjd7543HusfiSJG862lp', resave: true, saveUninitialized: true})) //session secret
 app.use(passport.initialize());
