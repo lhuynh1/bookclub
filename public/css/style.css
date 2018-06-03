@@ -43,3 +43,7 @@ margin-top: 20px;
 .topicGroup {
   margin: 15px;
 }
+#signup {
+  display: flex;
+  flex-direction: column;
+};

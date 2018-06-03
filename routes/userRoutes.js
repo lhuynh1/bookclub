@@ -1,5 +1,6 @@
 var userController = require("../controllers").users;
 var User = require("../models").User;
+var passport = require("passport");
 
 module.exports = function(app) {
     app.get("/users", userController.listAll);
@@ -8,6 +9,18 @@ module.exports = function(app) {
     app.get('/signup', userController.signup);
 
     app.get('/signin', userController.signin);
+
+    app.get('/', function(req, res) {
+        res.render('welcome');
+    });
+
+    app.post('/signup', passport.authenticate('local-signup', {
+        successRedirect: 'welcome',
+ 
+        failureRedirect: 'signup'
+        }
+ 
+    ));
 
     app.post('/signup', function(req, res) {
         User.create({
@@ -20,9 +33,10 @@ module.exports = function(app) {
     });
 
     function isLoggedIn (req, res, next) {
-        if (req.isAuthenticated())
+        if (req.isAuthenticated()) {
             return next();
-
+            res.render('/');
+        } else
         res.redirect('/signin');
     }
 }
