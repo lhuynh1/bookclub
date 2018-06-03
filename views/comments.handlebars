@@ -1,0 +1,42 @@
+<script src="/comments.js"></script>
+
+
+<div class="pageBody">
+  <div class="pageHeader">
+    <a class="waves-effect waves-light btn" href="/discussions">
+      <i class="material-icons left">add_circle_outline</i>Back to Discussions</a>
+    </button>
+    <h1>Comments</h1>
+    <a class="waves-effect waves-light btn" href="./comments/new">
+      <i class="material-icons left">add_circle_outline</i>Add a Comment</a>
+    </button>
+  </div>
+  <br><br>
+  <div class="divider"></div>
+
+  {{#each hbsComments}}
+  <br>
+  <div class="divider"></div>
+  <div class="eachComment">
+    <div class="row">
+      <div class="col s4">
+        <p class="userName">UserName: </p> 
+      </div>
+      <div class="col s8">
+        <p class="commentTitle"><strong>{{title}}</strong></p>
+      </div>      
+    </div>
+    
+    <div class="section">
+      <p class="commentContent">{{content}}</p>
+      <a href="/comments/{{id}}" class="waves-effect waves-light btn-small">Edit</a>
+      <button class="deleteBtn waves-effect waves-light btn-small" data-comment-id="{{id}}">Delete</button>
+    </div>
+    
+    <div class="timeStamp">
+      {{createdAt}}
+    </div>
+  </div>
+  {{/each}}
+</div>
+

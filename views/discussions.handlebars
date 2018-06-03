@@ -1,1 +1,27 @@
-<h2>Hello World</h2>
+<script src="/comments.js"></script>
+<link rel='stylesheet' type='text/css' href='/discussionsStyle.css' />
+
+<div class="pageBody">
+  <div class="discheader center-align">
+    <h3>Book Discussions</h3>
+    <p class="rules" style="font-size:20px">Start a new discussion by creating a topic. 
+      <br>Please reference the book as well.
+    </p>
+    <br>
+    <a class="waves-effect waves-yellow btn" href="/discussions/create">
+      <i class="material-icons left">add_circle_outline</i>Start a New Topic</a>
+    </button>
+  </div>
+  <div class="divider first" style="margin-top:20px"></div>
+
+  {{#each hbsDiscussions}}
+  <div class="topicGroup">
+    <button class="waves-effect waves-red btn-small topicDelete" data-discussion-id="{{id}}">Delete</button>
+ 
+    <div class="topic">{{topic}}</div>
+
+    <a href="/discussions/{{id}}/comments" class="commentsBtn waves-effect waves-yellow btn-small">Go to Comments</a>
+  </div>
+  <div class="divider"></div>
+  {{/each}}
+</div>

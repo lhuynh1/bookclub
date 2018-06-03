@@ -1,0 +1,21 @@
+body {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.pageBody {
+  background: #f8f4dc;
+
+};
+
+/* this value is for comments page only */
+.timeStamp {
+  text-align: right;
+};
+
+.commentContent {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Franklin Gothic Medium';
+  font-size: 20px;
+};

@@ -9,10 +9,6 @@ var PORT = process.env.PORT || 8080;
 
 var passportjs = require('./config/passport');
 
-
-
-app.use(express.static(__dirname + "/public"));
-// body parser set up
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -25,19 +21,9 @@ app.use(passport.session()); //for persistent login sessions
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-
-app.get("/signup", function(req, res) {
-  res.render("signup");
-});
-
-app.get("/login", function(req, res) {
-  res.render("login");
-});
-
-//require defined routes
 require("./routes")(app);
-
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
+  

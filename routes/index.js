@@ -1,6 +1,7 @@
-var userController = require("../controllers").user;
-var userRoute = require("./user-routes");
+var commentsDiscussionsRoutes = require("./commentsDiscussionsRoutes");
+var userRoutes = require("./userRoutes");
 
 module.exports = function(app) {
-    userRoute(app);
-}
+  commentsDiscussionsRoutes(app);
+  userRoutes(app);
+};
