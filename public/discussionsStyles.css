@@ -1,7 +1,11 @@
 .rules {
   text-align: center;
+  font-size: 20px;
 }
 
+.first {
+margin-top: 20px;
+}
 .commentsBtn {
   display: block;
   margin-bottom: 15px;
