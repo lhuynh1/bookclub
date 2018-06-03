@@ -1,10 +1,11 @@
-var bCrypt = require("bcrypt-nodejs");
+
 var User = require("../models").User
 
 module.exports = function(passport) {
     var LocalStrategy = require('passport-local').Strategy;
     var passport = require("passport");
     var models = require("../models").User;
+    var bCrypt = require("bcrypt-nodejs");
     
     //serialize and deserialized is needed for persistent login sessions. 
     //passport needs to serialize and unserialize users out of session

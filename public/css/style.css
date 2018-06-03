@@ -19,3 +19,8 @@ body {
   font-family: 'Franklin Gothic Medium';
   font-size: 20px;
 };
+
+#signup {
+  display: flex;
+  flex-direction: column;
+};
