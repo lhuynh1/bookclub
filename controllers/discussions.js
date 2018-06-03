@@ -33,6 +33,13 @@ module.exports = {
       })
   },
 
+  // createCommentForDiscussion(req, res) {
+  //   return Discussion.findById(req.params.discussionId)
+  //   .then(function() {
+
+  //   })
+  // },
+
   delete(req, res) {
     return Discussion
       .findById(req.params.discussionId)
