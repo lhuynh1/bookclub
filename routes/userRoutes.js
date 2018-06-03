@@ -9,6 +9,10 @@ module.exports = function(app) {
 
     app.get('/signin', userController.signin);
 
+    app.get('/', function() {
+        res.render('/welcome');
+    })
+
     app.post('/signup', function(req, res) {
         User.create({
             userName: req.body.userName,
