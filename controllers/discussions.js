@@ -53,7 +53,6 @@ module.exports = {
       .then(function(discussion) {
         discussion.getComments()
         .then(function(comments) {
-          comments.destroy();
           for (var i = 0; i < comments.length; i++) {
             comments[i].destroy();
           }
