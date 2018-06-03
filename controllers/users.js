@@ -1,5 +1,5 @@
-var routes = require("../routes/user-routes.js");
-var passport = require('../config/passport.js')(passport, models.user);
+var users = require('../models').User;
+var passport = require('../config/passport.js')(passport, users.User);
 
 // module.exports = function(app) {
 //     app.get("/signup", routes.signup);
@@ -10,16 +10,16 @@ var passport = require('../config/passport.js')(passport, models.user);
 //     }))
 // };
 
-module.exports = function(app) {
-    signup = function (req, res){
+module.exports = {
+    signup (req, res) {
         res.render('signup');
-    }
+    },
     
-    signin = function (req, res){
+    signin (req, res) {
         res.render('signin');
-    }
+    },
 
-    logout = function(req, res){
+    logout (req, res) {
         req.session.destroy(function (err) {
             res.redirect('/');
         });
