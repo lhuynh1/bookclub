@@ -11,8 +11,10 @@ module.exports = {
       userName: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
+        notEmpty: true,
       },
-      userBio: {
+      bio: {
         type: Sequelize.TEXT
       },
       favBook: {
@@ -20,6 +22,25 @@ module.exports = {
       },
       favAuthor: {
         type: Sequelize.STRING
+      },
+      email: {
+        type: Sequelize.STRING,
+        validate: {
+          isEmail: true,
+          allowNull: false,
+          notEmpty: true,
+        }
+      },
+      password: {
+        type:Sequelize.STRING,
+        validate: {
+          allowNull: false,
+          notEmpty: true,
+        } 
+      },
+      status: {
+        type: Sequelize.ENUM('active', 'inactive'),
+        defaultValue: 'active'
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +53,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Profiles');
+    return queryInterface.dropTable('Users');
   }
 };

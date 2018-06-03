@@ -8,6 +8,7 @@ body {
 
 };
 
+/* this value is for comments page only */
 .timeStamp {
   text-align: right;
 };
@@ -18,23 +19,3 @@ body {
   font-family: 'Franklin Gothic Medium';
   font-size: 20px;
 };
-
-.rules {
-  text-align: center;
-}
-
-.commentsBtn {
-  display: block;
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
-
-.topic {
-  display: inline;
-  font-size: 25px;
-  margin-left: 15px;
-}
-
-.topicGroup {
-  margin: 15px;
-}
