@@ -11,16 +11,16 @@ module.exports = {
 
 //create a comment linked to a discussion
   create(req, res) {
-    return Comment  
-      .create({
+    Discussion.findById(req.params.discussionId)
+    .then(function(discussion) {
+      var comment = Comment.build({
         title: req.body.title,
         content: req.body.content,
-        DiscussionId: req.params.discussionId,
-        UserId: req.body.ProfileId,
       })
-      .then(comment => res.send(comment))
-        //redirect('/comments'))
-      .catch(error => res.status(400).send(error));
+      comment.setDiscussion(discussion);
+      comment.setUser(req.user);
+      comment.save();
+    })
   },
 
   update(req, res) {
