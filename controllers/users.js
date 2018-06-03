@@ -1,5 +1,5 @@
 const User = require('../models').User;
-var passport = require('../config/passport.js')(passport, users.User);
+var passport = require('../config/passport.js')(passport, User);
 
 module.exports = {
     listAll(req, res) {

@@ -10,7 +10,6 @@ module.exports = {
         type: Sequelize.STRING,
         validate: {
         isEmail: true,
-        notNull: true,
         notEmpty: true
     }
     },
@@ -45,9 +44,6 @@ module.exports = {
     },
       bio: {
         type: Sequelize.TEXT
-    },
-      last_login: {
-        type: Sequelize.DATE
     },
       status: {
         type: Sequelize.ENUM('active', 'inactive'),

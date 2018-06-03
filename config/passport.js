@@ -1,8 +1,7 @@
 var bCrypt = require("bcrypt-nodejs");
+var User = require("../models").User
 
-
-module.exports = function(passport, user) {
-    var User = user;
+module.exports = function(passport) {
     var LocalStrategy = require('passport-local').Strategy;
     var passport = require("passport");
     var models = require("../models").User;
