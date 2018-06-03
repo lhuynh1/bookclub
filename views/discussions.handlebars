@@ -1,23 +1,25 @@
 <script src="/comments.js"></script>
 
-<div class="discheader">
-  <h3>Discussions by Book Title</h3>
-  <p class="rules">Start a new discussion by creating a topic, please reference the book as well.</p>
-  <br>
-  <button type="button" class="createTopic">
-    <a href="/discussions/create">Start a new Discussion</a>
-  </button>
-</div>
-<div class="divider"></div>
+<div class="pageBody">
+  <div class="discheader">
+    <h3>Discussions by Book Title</h3>
+    <p class="rules">Start a new discussion by creating a topic. <br>Please reference the book as well.</p>
+    <br>
+    <button type="button" class="createTopic">
+      <a href="/discussions/create">Start a new Discussion</a>
+    </button>
+  </div>
+  <div class="divider"></div>
 
-{{#each hbsDiscussions}}
-<div class="topicGroup">
-  <button id="topicDelete" class="waves-effect waves-red btn-small" data-discussion-id="{{id}}">Delete</button>
+  {{#each hbsDiscussions}}
+  <div class="topicGroup">
+    <button class="waves-effect waves-red btn-small topicDelete" data-discussion-id="{{id}}">Delete</button>
  
-  <div class="topic">{{topic}}</div>
+    <div class="topic">{{topic}}</div>
 
-  <a href="/discussions/{{id}}/comments" class="waves-effect waves-yellow btn-small">Go to Comments</a>
+    <a href="/discussions/{{id}}/comments" class="waves-effect waves-yellow btn-small">Go to Comments</a>
+  </div>
+  <div class="divider"></div>
+  {{/each}}
 </div>
-<div class="divider"></div>
-{{/each}}
 

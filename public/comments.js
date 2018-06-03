@@ -13,7 +13,7 @@ $(document).ready(function() {
     });
   });
   
-  $("#topicDelete").on('click', function(event) {
+  $("button.topicDelete").on('click', function(event) {
     let button = event.currentTarget;
     let id = button.getAttribute('data-discussion-id');
     let url = "/discussions/" + id;

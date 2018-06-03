@@ -12,12 +12,11 @@ module.exports = function(app) {
   app.get("/comments/:commentId", commentsController.displayOne);
   // //these routes handle comment create, update, delete functionality
   //app.post("/comments", commentsController.create);
-  //app.post("/comments/create", commentsController.create);
+  app.post("/comments/create", commentsController.create);
   app.post("/comments/:commentId", commentsController.update);
   app.delete("/comments/:commentId", commentsController.delete);
-
-  //=======all routes relating to discussions============//
-  //goes to create discussion handlebars page
+  //=======all routes relating to discussions============// //goes to create discussion handlebars page
+  
   app.get("/discussions/create", function(req, res) {
     res.render("createDiscussion");
   });
@@ -26,9 +25,13 @@ module.exports = function(app) {
   
   //deletes discussion by id
   app.delete("/discussions/:discussionId", discussionsController.delete);
-
-  //app.post("/discussions", discussionsController.create);
+  app.post("/discussions", discussionsController.create);
   app.get("/discussions", discussionsController.listAll);
   app.get("/discussions/:discussionId/comments", discussionsController.commentsForDiscussion);
-  app.post("/discussions/:discussionId/comments", commentsController.create);
+
+  app.get("/discussions/:discussionId/comments/new", function(req, res) { 
+    res.render('createComment')
+  });
+
+  app.post("/discussions/:discussionId/comments/new", discussionsController.createCommentForDiscussion);
 };

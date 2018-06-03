@@ -12,7 +12,7 @@ module.exports = {
           key: "id", //key that we are referencing is the discussion's id
         },
         onUpdate: "CASCADE",
-        OnDelete: "SET NULL",
+        OnDelete: "CASCADE",
       }
     )
 
