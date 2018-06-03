@@ -19,6 +19,7 @@ module.exports = {
       })
       comment.setDiscussion(discussion);
       comment.setUser(req.user);
+      console.log(req.user);
       comment.save();
     })
   },
