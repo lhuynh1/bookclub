@@ -13,8 +13,17 @@ $(document).ready(function() {
     });
   });
   
-  // $(".createTopic").on("click", function(event) {
-  //   let url = window.location.href;
-  //   window.location.replace(url + "/create");
-  // })
+  $("#topicDelete").on('click', function(event) {
+    let button = event.currentTarget;
+    let id = button.getAttribute('data-discussion-id');
+    let url = "/discussions/" + id;
+    $.ajax({
+      url: url,
+      type: 'DELETE',
+      success: function(result) {
+        alert("Comment deleted!");
+        window.location.reload();
+      }
+    });
+  });
 });

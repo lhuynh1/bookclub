@@ -31,5 +31,16 @@ module.exports = {
             res.render('comments', { hbsComments: dbcomments });
           })
       })
+  },
+
+  delete(req, res) {
+    return Discussion
+      .findById(req.params.discussionId)
+      .then(function(discussion) {
+        discussion.destroy();
+        console.log("discussion deleted deleted");
+        res.status(200).send({});
+      })
+      .catch(error => res.status(400).send(error));
   }
 };

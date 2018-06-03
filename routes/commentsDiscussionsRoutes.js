@@ -16,12 +16,18 @@ module.exports = function(app) {
   app.post("/comments/:commentId", commentsController.update);
   app.delete("/comments/:commentId", commentsController.delete);
 
-  //all routes relating to discussions
-  app.get("/createDiscussion", function(req, res) {
+  //=======all routes relating to discussions============//
+  //goes to create discussion handlebars page
+  app.get("/discussions/create", function(req, res) {
     res.render("createDiscussion");
-  })
-  app.post("/createDiscussion", discussionsController.create);
-  app.post("/discussions", discussionsController.create);
+  });
+  //runs post method for creating new discussion
+  app.post("/discussions/create", discussionsController.create);
+  
+  //deletes discussion by id
+  app.delete("/discussions/:discussionId", discussionsController.delete);
+
+  //app.post("/discussions", discussionsController.create);
   app.get("/discussions", discussionsController.listAll);
   app.get("/discussions/:discussionId/comments", discussionsController.commentsForDiscussion);
   app.post("/discussions/:discussionId/comments", commentsController.create);
