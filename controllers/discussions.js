@@ -6,16 +6,20 @@ module.exports = {
       .create({
         topic: req.body.topic,
       })
-      .then(discussion => res.status(201).send(discussion))
-      .catch(error => res.status(400).send(error));
+      .then(function() {
+        console.log("created a new discussion topic!")
+      })
+      res.redirect('/discussions');
+        
+      //   discussion => res.status(201).send(discussion))
+      // .catch(error => res.status(400).send(error));
   },
 
+  //displays all topics in db
   listAll(req, res) {
     return Discussion.all().then(function(dbDiscussions) {
-      res.render("discussions", { hbsDiscussions: dbDiscussions })
+      res.render("discussions", { hbsDiscussions: dbDiscussions });
     });
-    //   discussion => res.status(200).send(discussion))
-    // .catch(error => res.status(400).send(error));
   },
 
   //displays all comments under specific discussion id 

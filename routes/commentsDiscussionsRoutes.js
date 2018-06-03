@@ -16,6 +16,11 @@ module.exports = function(app) {
   app.post("/comments/:commentId", commentsController.update);
   app.delete("/comments/:commentId", commentsController.delete);
 
+  //all routes relating to discussions
+  app.get("/createDiscussion", function(req, res) {
+    res.render("createDiscussion");
+  })
+  app.post("/createDiscussion", discussionsController.create);
   app.post("/discussions", discussionsController.create);
   app.get("/discussions", discussionsController.listAll);
   app.get("/discussions/:discussionId/comments", discussionsController.commentsForDiscussion);
