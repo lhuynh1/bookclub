@@ -19,6 +19,22 @@ body {
   font-size: 20px;
 };
 
-.discheader{
+.rules {
   text-align: center;
+}
+
+.commentsBtn {
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.topic {
+  display: inline;
+  font-size: 25px;
+  margin-left: 15px;
+}
+
+.topicGroup {
+  margin: 15px;
 }

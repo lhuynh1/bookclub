@@ -1,9 +1,9 @@
 <script src="/comments.js"></script>
-<link rel='stylesheet' type='text/css' href='/style.css' />
+<link rel='stylesheet' type='text/css' href='/discussionsStyle.css' />
 
 <div class="pageBody">
-  <div class="discheader">
-    <h3>Discussions by Book Title</h3>
+  <div class="discheader center-align">
+    <h3>Book Discussions</h3>
     <p class="rules">Start a new discussion by creating a topic. 
       <br>Please reference the book as well.
     </p>
@@ -20,7 +20,7 @@
  
     <div class="topic">{{topic}}</div>
 
-    <a href="/discussions/{{id}}/comments" class="waves-effect waves-yellow btn-small">Go to Comments</a>
+    <a href="/discussions/{{id}}/comments" class="commentsBtn waves-effect waves-yellow btn-small">Go to Comments</a>
   </div>
   <div class="divider"></div>
   {{/each}}
