@@ -3,7 +3,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Users', {
       id: {
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         primaryKey: true
     },
       email: {
@@ -27,14 +27,6 @@ module.exports = {
         notNull: true,
         notEmpty: true
       }
-    },
-      firstName: {
-        type: Sequelize.STRING,
-        notEmpty: true
-    },
-      lastName: {
-        type: Sequelize.STRING,
-        notEmpty: true
     },
       favBook: {
         type: Sequelize.STRING

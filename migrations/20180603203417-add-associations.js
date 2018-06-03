@@ -3,6 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.addColumn(
+      //comments belong to Discussions
       "Comments", //name of source model
       "DiscussionId", //name of key we are adding
       {
@@ -28,7 +29,7 @@ module.exports = {
             key: "id", //key that we are referencing is the discussion's id
           },
           onUpdate: "CASCADE",
-          OnDelete: "SET NULL",
+          OnDelete: "CASCADE",
         }
       )
     }) 
@@ -39,13 +40,5 @@ module.exports = {
       "Comments",
       "DiscussionId"
     )
-
-    .then(() => {
-      // remove Discussion hasMany Comment
-      return queryInterface.removeColumn(
-        'Discussions', // name of the Target model
-        'CommentId' // key we want to remove
-      );
-    });
   }
 };
