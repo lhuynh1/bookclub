@@ -1,4 +1,5 @@
 const User = require('../models').User;
+var passport = require('../config/passport.js')(passport, User);
 
 module.exports = {
     listAll(req, res) {
@@ -16,5 +17,19 @@ module.exports = {
         }).then(function(user) {
             res.send(user);
         })
+    },
+
+    signup (req, res) {
+        res.render('signup');
+    },
+    
+    signin (req, res) {
+        res.render('signin');
+    },
+
+    logout (req, res) {
+        req.session.destroy(function (err) {
+            res.redirect('/');
+        });
     }
 };
