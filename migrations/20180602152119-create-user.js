@@ -4,6 +4,7 @@ module.exports = {
     return queryInterface.createTable('Users', {
       id: {
         type: Sequelize.INTEGER,
+        autoIncrement: true,
         primaryKey: true
     },
       email: {
@@ -40,6 +41,14 @@ module.exports = {
       status: {
         type: Sequelize.ENUM('active', 'inactive'),
         defaultValue: 'active'
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },
