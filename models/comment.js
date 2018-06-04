@@ -4,16 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false,
       autoIncrement: true,
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
     },  
     content: {
       type: DataTypes.TEXT,
-      allowNull: false,
     }, 
   });
   Comment.associate = function(models) {

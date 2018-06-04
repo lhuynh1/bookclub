@@ -1,6 +1,19 @@
-<h2>Username: {{userName}}</h2>
-<h2>Bio:</h2>
-    <p>{{userBio}}</p>
-<h3>Favorite Author: {{faveauthor}}</h3>
-<h3>Favorite Book: {{faveBook}}</h3>
-<h3>Your discussions: {{discussions}}</h3>
+<script src="/user.js"></script>
+<script src="/discussion.js"></script>
+
+<div class="pageBody">
+    <div class="discheader center-align">
+<h2>{{userName}}'s Profile</h2>
+<h4>Username: {{userName}}</h4>
+<h4>Bio:</h4>
+    <p>{{bio}}</p>
+<h4>Favorite Author: {{favAuthor}}</h4>
+<h4>Favorite Book: {{favBook}}</h4>
+<h4>Your discussions: {{Discussion.topic.type}}</h4>
+
+<button>
+    
+    <a class="waves-effect waves-yellow btn" href="/users/{{userId}}/update">Update Profile</a>
+</button>
+    </div>
+</div>
