@@ -5,10 +5,14 @@ body {
 
 .pageBody {
   background: #f8f4dc;
+}
 
+#signup {
+  display: flex;
+  flex-direction: column;
 };
 
-/* this value is for comments page only */
+/*============Styles for Discussion and Comments=======*/
 .timeStamp {
   text-align: right;
 };
@@ -43,7 +47,5 @@ margin-top: 20px;
 .topicGroup {
   margin: 15px;
 }
-#signup {
-  display: flex;
-  flex-direction: column;
-};
+
+/*=========================================*/

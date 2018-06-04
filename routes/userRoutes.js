@@ -9,6 +9,8 @@ module.exports = function(app) {
     app.get('/signup', userController.signup);
 
     app.get('/signin', userController.signin);
+    
+    app.post("/signin", userController.signin);
 
     app.get('/', function(req, res) {
         res.render('welcome');
