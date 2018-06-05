@@ -4,9 +4,9 @@ var Discussion = require("../models").Discussion;
 var Comment = require("../models").Comment;
 
 module.exports = function(app) {
-  //app.get("/comments/:commentId", commentsController.displayOne);
-  //app.post("/comments", commentsController.create);
-  //app.post("/comments/create", commentsController.create);
+  app.get("/comments/:commentId", commentsController.displayOne);
+  app.post("/comments", commentsController.create);
+  app.post("/comments/create", commentsController.create);
   app.post("/comments/:commentId", commentsController.update);
   app.delete("/comments/:commentId", commentsController.delete);
   //=======all routes relating to discussions============// //goes to create discussion handlebars page

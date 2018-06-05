@@ -16,6 +16,8 @@ app.use(express.static("public"));
 
 passport.use(new Strategy(
   function(username, password, cb) {
+    console.log(username)
+    console.log(password)
     User.findOne({ where: { userName: username, password: password }})
     .then(function(user) {
       if (user) {
