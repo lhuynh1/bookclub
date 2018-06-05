@@ -3,23 +3,23 @@ const User = require('../models').User;
 module.exports = {
     listOne(req, res) {
         User.findById(req.params.userId).then(function(dbUser) {
-            res.render('profile', { hbsUser: dbUser });
+            res.render('profile', dbUser.get());
         })
     },
 
-    updateOne(req, res) {
-        User.findById(req.params.userId).then(function(user) {
-            user.userName = req.body.userName,
-            user.userBio = req.body.userBio,
-            user.favAuthor = req.body.favAuthor,
-            user.favBook = req.body.favBook,
-            user.save().then(function() {
-                console.log("profile updated");
-            });
-            res.redirect("/profiles/"+ userId);
-        })
-        .cathc(err => res.status(400).send(error));
-    },
+    // updateOne(req, res) {
+    //     User.findById(req.params.userId).then(function(user) {
+    //         user.userName = req.body.userName,
+    //         user.userBio = req.body.userBio,
+    //         user.favAuthor = req.body.favAuthor,
+    //         user.favBook = req.body.favBook,
+    //         user.save().then(function() {
+    //             console.log("profile updated");
+    //         });
+    //         res.redirect("/profile/"+ userId);
+    //     })
+    //     .cathc(err => res.status(400).send(error));
+    // },
 
 
     create(req, res) {
@@ -41,16 +41,16 @@ module.exports = {
         return User
         .findById(req.params.userId)
         .then(function(user) {
-            User.userName = req.body.userName
-            User.bio = req.body.bio
-            User.favBook = req.body.favBook
-            User.favAuthor = req.body.favAuthor
-            User.email = req.body.email
-            User.password = req.body.password
-            User.save().then(function() {
+            user.userName = req.body.userName
+            user.bio = req.body.bio
+            user.favBook = req.body.favBook
+            user.favAuthor = req.body.favAuthor
+            user.email = req.body.email
+            user.password = req.body.password
+            user.save().then(function() {
                 console.log("updated profile");
+                res.redirect("/profile/" + user.id)
             });
-            res.redirect("/users/"+ user.userId+"/update")
         })
         .catch(error => res.status(400).send(error));
     },

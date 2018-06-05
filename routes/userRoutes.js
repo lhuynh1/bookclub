@@ -5,7 +5,13 @@ var passport = require("passport");
 module.exports = function(app) {
     app.get("/profile/:userId", userController.listOne)
 
-    app.post("/profiles/:userId", userController.updateOne);
+    app.get("/profile/:userId/update", function(req, res) {
+        User.findById(req.params.userId).then(function(user) {
+            res.render('updateProfile', user.get());
+        })
+    });
+
+    app.post('/profile/:userId/update', userController.update)
 
     app.post('/signup', userController.create);
 
