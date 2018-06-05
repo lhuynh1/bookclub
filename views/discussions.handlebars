@@ -11,10 +11,10 @@
   <div class="divider first" style="margin-top:20px"></div>
 
   {{#each hbsDiscussions}}
-  <div class="topicGroup">
+  <div class="topicGroup center-align">
     <button class="waves-effect waves-red btn-small topicDelete indigo darken-4" data-discussion-id="{{id}}">Delete</button>
  
-    <div class="topic">{{topic}}</div>
+    <h4 class="topic">{{topic}}</h4>
 
     <a href="/discussions/{{id}}/comments" class="commentsBtn waves-effect waves-yellow btn-small indigo darken-4">Go to Comments</a>
   </div>
