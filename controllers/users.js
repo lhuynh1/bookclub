@@ -14,7 +14,7 @@ module.exports = {
             favBook: req.body.favBook,
             favAuthor: req.body.favAuthor,
         }).then(function(user) {
-            res.send(user);
+            res.redirect('/discussions');
         })
     },
 

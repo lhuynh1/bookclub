@@ -4,7 +4,7 @@ var passport = require("passport");
 
 module.exports = function(app) {
     app.get('/users', userController.listAll);
-    app.post('/users', userController.create);
+    app.post('/signup', userController.create);
 
     app.get('/signup', userController.signup);
 
