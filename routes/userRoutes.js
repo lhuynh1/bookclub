@@ -3,7 +3,10 @@ var User = require("../models").User;
 var passport = require("passport");
 
 module.exports = function(app) {
-    app.get('/users', userController.listAll);
+    app.get("/profile/:userId", userController.listOne)
+
+    app.post("/profiles/:userId", userController.updateOne);
+
     app.post('/signup', userController.create);
 
     app.get('/signup', userController.signup);

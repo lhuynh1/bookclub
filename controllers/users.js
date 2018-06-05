@@ -1,14 +1,27 @@
 const User = require('../models').User;
 
 module.exports = {
-    listUser(req, res) {
-        User.findById(req.params.userId)
-        .then(function(dbuser) {
-            console.log(dbuser);
-            console.log(dbuser.get)
-            res.render("profile", dbuser.get());
+    listOne(req, res) {
+        User.findById(req.params.userId).then(function(dbUser) {
+            res.render('profile', { hbsUser: dbUser });
         })
     },
+
+    updateOne(req, res) {
+        User.findById(req.params.userId).then(function(user) {
+            user.userName = req.body.userName,
+            user.userBio = req.body.userBio,
+            user.favAuthor = req.body.favAuthor,
+            user.favBook = req.body.favBook,
+            user.save().then(function() {
+                console.log("profile updated");
+            });
+            res.redirect("/profiles/"+ userId);
+        })
+        .cathc(err => res.status(400).send(error));
+    },
+
+
     create(req, res) {
         console.log(req.body);
         User.create({
