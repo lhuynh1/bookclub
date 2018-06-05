@@ -10,29 +10,13 @@ module.exports = function(app) {
 
     app.get('/signin', userController.signin);
     
-    app.post('/signin', userController.signin);
-
-    app.get('/', function(req, res) {
-        res.render('welcome');
-    });
-
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/welcome',
- 
-        failureRedirect: '/signup'
+    app.post(
+        '/signin',
+        passport.authenticate('local', { failureRedirect: '/signin' }),
+        function(req, res) {
+            res.redirect('/profile/' + req.user.id);
         }
- 
-    ));
-
-    app.post('/signup', function(req, res) {
-        User.create({
-            userName: req.body.userName,
-            email: req.body.email,
-            password: req.body.password,
-        })
-        console.log(req.body)
-        console.log("we hit the route!")      
-    });
+    )
 
     function isLoggedIn (req, res, next) {
         if (req.isAuthenticated()) {
