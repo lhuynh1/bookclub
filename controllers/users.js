@@ -1,4 +1,5 @@
 const User = require('../models').User;
+var passport = require('../config/passport.js')(passport, User);
 
 module.exports = {
     listUser(req, res) {
@@ -39,5 +40,19 @@ module.exports = {
             res.redirect("/users/"+ user.userId+"/update")
         })
         .catch(error => res.status(400).send(error));
+    },
+
+    signup (req, res) {
+        res.render('signup');
+    },
+    
+    signin (req, res) {
+        res.render('signin');
+    },
+
+    logout (req, res) {
+        req.session.destroy(function (err) {
+            res.redirect('/');
+        });
     }
 };

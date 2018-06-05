@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- Fontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--link to allow use of icons for materialize-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Styling for discussion and comments pages-->
     <link rel="stylesheet" type="text/css" href="/style.css">
@@ -14,13 +17,35 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
-    
+
     <title>Document</title>
 </head>
 <body>
-    
+<nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">
+      Bookclub
+      <i class="fas fa-book"></i>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/discussions">Discussions</a></li>
+        <li><a href="/signup">Sign up</a></li>
+        <li><a href="/signin">Log in</a></li>
+      </ul>
+    </div>
+  </nav>
     {{{body}}}
 
+
+
+
+<footer class="page-footer">
+<p class="socialTitle">Checkout the repository!<br>
+        <a href="https://github.com/lhuynh1/bookclub" target="blank">
+          <i class="fa fa-github fa-3x"></i>
+        </a>
+</footer>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </body>
