@@ -1,8 +1,10 @@
-var userController = require("../controllers").users;
+
 var User = require("../models").User;
-var passport = require("passport");
 
 module.exports = function(app) {
+    var passport = require("passport");
+    var passportjs = require("../config/passport.js");
+    var userController = require("../controllers/users.js");
     app.get("/users", userController.listAll);
     app.post("/users", userController.create);
 
@@ -12,14 +14,18 @@ module.exports = function(app) {
 
     app.get('/', function(req, res) {
         res.render('welcome');
+    
     });
 
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: 'welcome',
+    app.get('/welcome',isLoggedIn, userController.signin);
+    
+    app.post('/signin', passport.authenticate('local-signin', {
+        
+        successRedirect: '/',
  
-        failureRedirect: 'signup'
+        failureRedirect: '/signin'
         }
- 
+    
     ));
 
     app.post('/signup', function(req, res) {
@@ -27,9 +33,9 @@ module.exports = function(app) {
             userName: req.body.userName,
             email: req.body.email,
             password: req.body.password,
-        })
-        console.log(req.body)
-        console.log("we hit the route!")      
+        });
+        res.redirect('/');
+        console.log(req.body);     
     });
 
     function isLoggedIn (req, res, next) {

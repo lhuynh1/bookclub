@@ -1,11 +1,9 @@
 body {
-  max-width: 75%;
-  margin: 0 auto;
+  /* font-family: "Martel", serif; */
 }
 
 .pageBody {
   background: #f8f4dc;
-
 };
 
 /* this value is for comments page only */
@@ -20,7 +18,29 @@ body {
   font-size: 20px;
 };
 
+.parallax-container {
+  height: 400px;
+};
+
+#contact-section {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+#nav-title {
+  font-family: 'Neucha', serif;
+  font-size: 40pt;
+};
+
 #signup {
   display: flex;
   flex-direction: column;
+  height: 100%;
+};
+
+.page-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 };

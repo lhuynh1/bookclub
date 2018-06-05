@@ -10,28 +10,29 @@
     <!--link to allow use of icons for materialize-->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Styling for discussion and comments pages-->
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
+    <!--Styling for pages-->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Martel|Neucha" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
 
-    <title>Document</title>
+    <title>Bookclub</title>
 </head>
 <body>
 <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo">
+    <div class="nav-wrapper blue-grey darken-4">
+      <a href="/" class="brand-logo" id="nav-title">
       Bookclub
-      <i class="fas fa-book"></i>
+     
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/profile">Profile</a></li>
         <li><a href="/discussions">Discussions</a></li>
         <li><a href="/signup">Sign up</a></li>
-        <li><a href="/signin">Log in</a></li>
+        <li><a href="/signin">Sign in</a></li>
       </ul>
     </div>
   </nav>
@@ -40,14 +41,18 @@
 
 
 
-<footer class="page-footer">
-<p class="socialTitle">Checkout the repository!<br>
-        <a href="https://github.com/lhuynh1/bookclub" target="blank">
-          <i class="fa fa-github fa-3x"></i>
-        </a>
+<footer class="page-footer blue-grey darken-4 footer-fixed">
+
 </footer>
+
+<script>
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+  </script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="parallax.js"></script>
 </body>
 <tail>
 </tail>

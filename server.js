@@ -17,6 +17,7 @@ app.use(session({ secret: 'qjd7543HusfiSJG862lp', resave: true, saveUninitialize
 app.use(passport.initialize());
 app.use(passport.session()); //for persistent login sessions
 
+app.use(express.static("public"))
 // handlebars set up
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
