@@ -3,23 +3,23 @@ var User = require("../models").User;
 var passport = require("passport");
 
 module.exports = function(app) {
-    app.get("/users", userController.listAll);
-    app.post("/users", userController.create);
+    app.get('/users', userController.listAll);
+    app.post('/users', userController.create);
 
     app.get('/signup', userController.signup);
 
     app.get('/signin', userController.signin);
     
-    app.post("/signin", userController.signin);
+    app.post('/signin', userController.signin);
 
     app.get('/', function(req, res) {
         res.render('welcome');
     });
 
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: 'welcome',
+        successRedirect: '/welcome',
  
-        failureRedirect: 'signup'
+        failureRedirect: '/signup'
         }
  
     ));

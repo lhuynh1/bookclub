@@ -1,17 +1,17 @@
 body {
-  max-width: 75%;
+  max-width: 95%;
   margin: 0 auto;
+  background: #faf7ea;
 }
 
-.pageBody {
-  background: #f8f4dc;
-}
 
 #signup {
   display: flex;
   flex-direction: column;
 };
-
+ footer {
+   margin-top: 10px;
+ }
 /*============Styles for Discussion and Comments=======*/
 .timeStamp {
   text-align: right;
@@ -48,4 +48,9 @@ margin-top: 20px;
   margin: 15px;
 }
 
+.topicForm, .commentForm {
+  margin-top: 4%;
+  margin-bottom: 4%; 
+  font-size: 23px;
+}
 /*=========================================*/
