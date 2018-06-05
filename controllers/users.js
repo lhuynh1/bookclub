@@ -20,7 +20,7 @@ module.exports = {
             favBook: req.body.favBook,
             favAuthor: req.body.favAuthor,
         }).then(function(user) {
-            res.redirect('/discussions');
+            res.redirect("/signin");
         })
         .then(user => res.send(user))
         .catch(error => res.status(400).send(error));
