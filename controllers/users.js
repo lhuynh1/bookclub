@@ -1,5 +1,4 @@
 const User = require('../models').User;
-var passport = require('../config/passport.js')(passport, User);
 
 module.exports = {
     listUser(req, res) {
@@ -13,13 +12,14 @@ module.exports = {
     create(req, res) {
         console.log(req.body);
         User.create({
-            id: "3",
             email: req.body.email,
             password: req.body.password,
             userName: req.body.userName,
             userBio: req.body.userBio,
             favBook: req.body.favBook,
             favAuthor: req.body.favAuthor,
+        }).then(function(user) {
+            res.redirect('/discussions');
         })
         .then(user => res.send(user))
         .catch(error => res.status(400).send(error));
@@ -56,3 +56,4 @@ module.exports = {
         });
     }
 };
+

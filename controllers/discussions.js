@@ -2,6 +2,7 @@ const Discussion = require('../models').Discussion;
 var Comment = require("../models").Comment;
 
 module.exports = {
+  //create a new discussions toppic
   create(req, res) {
     Discussion
       .create({
@@ -10,12 +11,10 @@ module.exports = {
       .then(function() {
         console.log("created a new discussion topic!")
         res.redirect('/discussions');
-      })        
-      //   discussion => res.status(201).send(discussion))
-      // .catch(error => res.status(400).send(error));
+      })
   },
 
-  //displays all topics in db
+  //displays all topics in db to discussions page
   listAll(req, res) {
     Discussion.all().then(function(dbDiscussions) {
       res.render("discussions", { hbsDiscussions: dbDiscussions });
@@ -28,11 +27,30 @@ module.exports = {
       .then(function(discussion) {
         discussion.getComments()
           .then(function(dbcomments) {
-            res.render('comments', { hbsComments: dbcomments });
+            var comments = [];
+            var userPromises = dbcomments.map(function(dbcomment) {
+              return dbcomment.getUser();
+            });
+            Promise.all(userPromises).then(function(users) {
+              for (var i = 0; i < dbcomments.length; i++) {
+                var dbcomment = dbcomments[i]
+                var comment = dbcomment.get(); 
+                var user = users[i];
+                if (user) {
+                  comment.userName = user.userName;
+                }
+                console.log(comment);
+                comments.push(comment)
+              }
+              var finalObject = { hbsComments: comments, discussionTopic: discussion.topic };
+              res.render('comments', finalObject);
+            })
+            .catch(function(err) { console.log(err) });
           })
       })
   },
 
+  //create a comment under discussion
   createCommentForDiscussion(req, res) {
     Discussion.findById(req.params.discussionId).then(function(discussion) {
       let comment = Comment.build({
@@ -40,9 +58,15 @@ module.exports = {
         content: req.body.content
       });
       comment.setDiscussion(discussion);
+      comment.setUser(req.user);
+      console.log(req.user);
       comment.save()
       .then(function(comment) {
         res.redirect('/discussions/' + discussion.id + '/comments')
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.redirect('/signin');
       })
     })
   },

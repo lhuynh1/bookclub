@@ -1,26 +1,57 @@
 body {
-  max-width: 75%;
+  max-width: 95%;
   margin: 0 auto;
+  background: #faf7ea;
 }
 
-.pageBody {
-  background: #f8f4dc;
 
+#signup {
+  display: flex;
+  flex-direction: column;
 };
+ footer {
+   margin-top: 10px;
+ }
 
-/* this value is for comments page only */
+/*======Styles for Discussion and Comments=====*/
 .timeStamp {
   text-align: right;
 };
 
-.commentContent {
+.commentContent, commentTitle {
   padding-top: 10px;
   padding-bottom: 10px;
   font-family: 'Franklin Gothic Medium';
   font-size: 20px;
 };
 
-#signup {
-  display: flex;
-  flex-direction: column;
-};
+.rules {
+  text-align: center;
+  font-size: 20px;
+}
+
+.first {
+margin-top: 20px;
+}
+.commentsBtn {
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.topic {
+  display: inline;
+  font-size: 25px;
+  margin-left: 15px;
+}
+
+.topicGroup {
+  margin: 15px;
+}
+
+.topicForm, .commentForm {
+  margin-top: 4%;
+  margin-bottom: 4%; 
+  font-size: 23px;
+}
+/*=========================================*/

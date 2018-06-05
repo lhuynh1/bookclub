@@ -1,12 +1,9 @@
-<script src="/comments.js"></script>
-
-
 <div class="pageBody">
   <div class="pageHeader">
     <a class="waves-effect waves-light btn" href="/discussions">
       <i class="material-icons left">add_circle_outline</i>Back to Discussions</a>
     </button>
-    <h1>Comments</h1>
+    <h1>{{discussionTopic}}</h1>
     <a class="waves-effect waves-light btn" href="./comments/new">
       <i class="material-icons left">add_circle_outline</i>Add a Comment</a>
     </button>
@@ -20,7 +17,7 @@
   <div class="eachComment">
     <div class="row">
       <div class="col s4">
-        <p class="userName">UserName: </p> 
+        <p class="userName">UserName: {{userName}}</p> 
       </div>
       <div class="col s8">
         <p class="commentTitle"><strong>{{title}}</strong></p>
@@ -33,10 +30,14 @@
       <button class="deleteBtn waves-effect waves-light btn-small" data-comment-id="{{id}}">Delete</button>
     </div>
     
-    <div class="timeStamp">
+    <div class="timeStamp right-align">
       {{createdAt}}
     </div>
   </div>
   {{/each}}
 </div>
+
+<tail>
+  <script type="text/javascript" src="/comments.js"></script>
+</tail>
 

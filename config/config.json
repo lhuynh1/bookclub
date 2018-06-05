@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "password",
-=======
-    "password": "test246!",
->>>>>>> 4683d2809a3ea0326024540fb365922910de691e
+    "password": "pass",
     "database": "bookclub",
     "host": "127.0.0.1",
     "dialect": "mysql"
