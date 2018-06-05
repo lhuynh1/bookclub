@@ -7,6 +7,10 @@ module.exports = {
         })
     },
 
+    loggedInUser(req, res) {
+        res.render('profile', req.user.get())
+    },
+
     create(req, res) {
         User.create({
             email: req.body.email,

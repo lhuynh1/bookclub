@@ -4,6 +4,7 @@ var passport = require("passport");
 
 module.exports = function(app) {
     app.get("/profile/:userId", userController.listOne)
+    app.get("/profile", userController.loggedInUser)
 
     app.get("/profile/:userId/update", function(req, res) {
         User.findById(req.params.userId).then(function(user) {
