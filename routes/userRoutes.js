@@ -17,12 +17,4 @@ module.exports = function(app) {
             res.redirect('/profile/' + req.user.id);
         }
     )
-
-    function isLoggedIn (req, res, next) {
-        if (req.isAuthenticated()) {
-            return next();
-            res.render('/');
-        } else
-        res.redirect('/signin');
-    }
 }
