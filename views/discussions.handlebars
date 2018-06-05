@@ -5,19 +5,18 @@
       <br>Please include the name of the book.
     </p>
     <br>
-    <a class="waves-effect waves-yellow btn" href="/discussions/create">
+    <a class="waves-effect waves-yellow btn indigo darken-4" href="/discussions/create">
       <i class="material-icons left">add_circle_outline</i>Start a New Topic</a>
-    </button>
   </div>
   <div class="divider first" style="margin-top:20px"></div>
 
   {{#each hbsDiscussions}}
   <div class="topicGroup">
-    <button class="waves-effect waves-red btn-small topicDelete" data-discussion-id="{{id}}">Delete</button>
+    <button class="waves-effect waves-red btn-small topicDelete indigo darken-4" data-discussion-id="{{id}}">Delete</button>
  
     <div class="topic">{{topic}}</div>
 
-    <a href="/discussions/{{id}}/comments" class="commentsBtn waves-effect waves-yellow btn-small">Go to Comments</a>
+    <a href="/discussions/{{id}}/comments" class="commentsBtn waves-effect waves-yellow btn-small indigo darken-4">Go to Comments</a>
   </div>
   <div class="divider"></div>
   {{/each}}
