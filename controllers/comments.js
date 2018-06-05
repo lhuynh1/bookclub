@@ -19,7 +19,6 @@ module.exports = {
       })
       comment.setDiscussion(discussion);
       comment.setUser(req.user);
-      console.log(req.user);
       comment.save();
     })
   },
@@ -31,9 +30,9 @@ module.exports = {
         comment.title = req.body.title
         comment.content = req.body.content
         comment.save().then(function() {
-          console.log("updated comment");
+          console.log("updated comment id: " + comment.id);
+          res.redirect('/discussions/' + comment.DiscussionId + '/comments');
         });
-        res.redirect('/discussions/' + comment.DiscussionId + '/comments');
       })
       .catch(error => res.status(400).send(error));
   },
@@ -43,7 +42,7 @@ module.exports = {
       .findById(req.params.commentId)
       .then(function(comment) {
         comment.destroy();
-        console.log("comment deleted");
+        console.log("comment deleted id: " + comment.id);
         res.status(200).send({});
       })
       .catch(error => res.status(400).send(error));

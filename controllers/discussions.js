@@ -39,7 +39,6 @@ module.exports = {
                 if (user) {
                   comment.userName = user.userName;
                 }
-                console.log(comment);
                 comments.push(comment)
               }
               var finalObject = { hbsComments: comments, discussionTopic: discussion.topic };
@@ -59,7 +58,6 @@ module.exports = {
       });
       comment.setDiscussion(discussion);
       comment.setUser(req.user);
-      console.log(req.user);
       comment.save()
       .then(function(comment) {
         res.redirect('/discussions/' + discussion.id + '/comments')

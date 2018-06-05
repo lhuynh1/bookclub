@@ -7,23 +7,7 @@ module.exports = {
         })
     },
 
-    // updateOne(req, res) {
-    //     User.findById(req.params.userId).then(function(user) {
-    //         user.userName = req.body.userName,
-    //         user.userBio = req.body.userBio,
-    //         user.favAuthor = req.body.favAuthor,
-    //         user.favBook = req.body.favBook,
-    //         user.save().then(function() {
-    //             console.log("profile updated");
-    //         });
-    //         res.redirect("/profile/"+ userId);
-    //     })
-    //     .cathc(err => res.status(400).send(error));
-    // },
-
-
     create(req, res) {
-        console.log(req.body);
         User.create({
             email: req.body.email,
             password: req.body.password,
@@ -48,7 +32,7 @@ module.exports = {
             user.email = req.body.email
             user.password = req.body.password
             user.save().then(function() {
-                console.log("updated profile");
+                console.log("updated profile id: " + user.id);
                 res.redirect("/profile/" + user.id)
             });
         })
