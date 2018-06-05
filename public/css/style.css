@@ -11,12 +11,13 @@ body {
  footer {
    margin-top: 10px;
  }
-/*============Styles for Discussion and Comments=======*/
+
+/*======Styles for Discussion and Comments=====*/
 .timeStamp {
   text-align: right;
 };
 
-.commentContent {
+.commentContent, commentTitle {
   padding-top: 10px;
   padding-bottom: 10px;
   font-family: 'Franklin Gothic Medium';
