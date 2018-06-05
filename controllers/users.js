@@ -8,7 +8,11 @@ module.exports = {
     },
 
     loggedInUser(req, res) {
-        res.render('profile', req.user.get())
+        if (req.user) {
+            res.render('profile', req.user.get())
+        } else {
+            res.redirect('/signin');
+        }
     },
 
     create(req, res) {
