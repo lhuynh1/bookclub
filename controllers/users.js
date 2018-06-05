@@ -1,5 +1,4 @@
 const User = require('../models').User;
-var passport = require('../config/passport.js')(passport, User);
 
 module.exports = {
     listAll(req, res) {
@@ -15,7 +14,7 @@ module.exports = {
             favBook: req.body.favBook,
             favAuthor: req.body.favAuthor,
         }).then(function(user) {
-            res.send(user);
+            res.redirect('/discussions');
         })
     },
 
@@ -33,3 +32,4 @@ module.exports = {
         });
     }
 };
+

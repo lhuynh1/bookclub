@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     topic: {
       type:DataTypes.STRING,
-      allowNull: false,
     }, 
   });
   Discussion.associate = function(models) {
