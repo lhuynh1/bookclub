@@ -18,6 +18,10 @@ module.exports = function(app) {
     app.get('/signup', userController.signup);
 
     app.get('/signin', userController.signin);
+
+    app.get('/', function(res, res) {
+        res.render('welcome');
+    })
     
     app.post(
         '/signin',
