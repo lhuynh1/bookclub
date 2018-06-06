@@ -40,6 +40,7 @@ Profile page routing & controllers.
 
 - Make app mobile friendly
 - Make reply function to comments
-- add a calender scheduler to set up video conferences
-- add a suggestions page where people can vote for nextreading choice: time limit, and results post on last day
+- Add a calender scheduler to set up video conferences
+- Add a suggestions page where people can vote for nextreading choice: time limit, and results post on last day; user can search for titles (call google books api or similar) by author, title, genre
 - prettify profile and  update profile page
+- Display username on all pages once user is logged in
