@@ -31,4 +31,7 @@ module.exports = function(app) {
             res.redirect('/profile/' + req.user.id);
         }
     )
+
+    app.post('/logout', userController.logout);
+    app.get('/logout', userController.logout);
 }
