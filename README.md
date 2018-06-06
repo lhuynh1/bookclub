@@ -24,7 +24,6 @@ The purpose of this project is to build an application where bookworms can come 
 
 # Who is doing what?
 
-
 ## Lina
 
 Discussion & comments page including all controllers, routing and model creation.
@@ -36,3 +35,11 @@ User model, signup, signin using passport authentication including all controlle
 ## Mackenzie
 
 Profile page routing & controllers.
+
+#Future Features
+
+- Make app mobile friendly
+- Make reply function to comments
+- add a calender scheduler to set up video conferences
+- add a suggestions page where people can vote for nextreading choice: time limit, and results post on last day
+- prettify profile and  update profile page
