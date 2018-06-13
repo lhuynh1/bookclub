@@ -1,6 +1,6 @@
 # bookclub
 
-Check it out here: https://evening-thicket-11159.herokuapp.com/signin
+Check it out here: https://evening-thicket-11159.herokuapp.com/
 
 Georgia Tech Coding Bootcamp
 Fullstack Web Development
